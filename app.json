@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "BoomGhoom",
+    "slug": "boomghoom",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0F"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.boomghoom.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "BoomGhoom needs camera access for KYC verification and profile photos.",
+        "NSPhotoLibraryUsageDescription": "BoomGhoom needs photo library access for uploading images.",
+        "NSLocationWhenInUseUsageDescription": "BoomGhoom needs location access to show events near you."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0F"
+      },
+      "package": "com.boomghoom.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow BoomGhoom to access your camera for KYC and photos."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow BoomGhoom to use your location to discover nearby events."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow BoomGhoom to access your photos for profile and event images."
+        }
+      ],
+      "expo-asset"
+    ]
+  }
+}
