@@ -8,32 +8,30 @@ import { StyleSheet, View, LogBox, Text as RNText } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
 
 import { ThemeProvider, colors } from './src/presentation/theme';
 import { useAuthStore } from './src/presentation/store';
 
 // Lazy load screens to debug
-const SplashScreenComponent = React.lazy(() => import('./src/presentation/screens/auth/SplashScreen').then(m => ({ default: m.SplashScreen })));
-const OnboardingScreen = React.lazy(() => import('./src/presentation/screens/auth/OnboardingScreen').then(m => ({ default: m.OnboardingScreen })));
-const LoginScreen = React.lazy(() => import('./src/presentation/screens/auth/LoginScreen').then(m => ({ default: m.LoginScreen })));
-const SignupScreen = React.lazy(() => import('./src/presentation/screens/auth/SignupScreen').then(m => ({ default: m.SignupScreen })));
-const OTPScreen = React.lazy(() => import('./src/presentation/screens/auth/OTPScreen').then(m => ({ default: m.OTPScreen })));
-const CitySelectionScreen = React.lazy(() => import('./src/presentation/screens/auth/CitySelectionScreen').then(m => ({ default: m.CitySelectionScreen })));
-const HomeScreen = React.lazy(() => import('./src/presentation/screens/main/HomeScreen').then(m => ({ default: m.HomeScreen })));
-const ProfileScreen = React.lazy(() => import('./src/presentation/screens/main/ProfileScreen').then(m => ({ default: m.ProfileScreen })));
-const SettingsScreen = React.lazy(() => import('./src/presentation/screens/main/SettingsScreen').then(m => ({ default: m.SettingsScreen })));
-const NotificationsScreen = React.lazy(() => import('./src/presentation/screens/main/NotificationsScreen').then(m => ({ default: m.NotificationsScreen })));
-const EventDetailScreen = React.lazy(() => import('./src/presentation/screens/event/EventDetailScreen').then(m => ({ default: m.EventDetailScreen })));
-const CreateEventScreen = React.lazy(() => import('./src/presentation/screens/event/CreateEventScreen').then(m => ({ default: m.CreateEventScreen })));
-const WalletScreen = React.lazy(() => import('./src/presentation/screens/finance/WalletScreen').then(m => ({ default: m.WalletScreen })));
-const FriendsScreen = React.lazy(() => import('./src/presentation/screens/social/FriendsScreen').then(m => ({ default: m.FriendsScreen })));
-const ChatScreen = React.lazy(() => import('./src/presentation/screens/social/ChatScreen').then(m => ({ default: m.ChatScreen })));
-const KYCIntroScreen = React.lazy(() => import('./src/presentation/screens/kyc/KYCIntroScreen').then(m => ({ default: m.KYCIntroScreen })));
-const KYCSelfieScreen = React.lazy(() => import('./src/presentation/screens/kyc/KYCSelfieScreen').then(m => ({ default: m.KYCSelfieScreen })));
-const KYCSuccessScreen = React.lazy(() => import('./src/presentation/screens/kyc/KYCSuccessScreen').then(m => ({ default: m.KYCSuccessScreen })));
-const MainNavigator = React.lazy(() => import('./src/presentation/navigation/MainNavigator').then(m => ({ default: m.MainNavigator })));
+const SplashScreenComponent = React.lazy(() => import('./src/presentation/screens/auth/SplashScreen'));
+const OnboardingScreen = React.lazy(() => import('./src/presentation/screens/auth/OnboardingScreen'));
+const LoginScreen = React.lazy(() => import('./src/presentation/screens/auth/LoginScreen'));
+const SignupScreen = React.lazy(() => import('./src/presentation/screens/auth/SignupScreen'));
+const OTPScreen = React.lazy(() => import('./src/presentation/screens/auth/OTPScreen'));
+const CitySelectionScreen = React.lazy(() => import('./src/presentation/screens/auth/CitySelectionScreen'));
+const SettingsScreen = React.lazy(() => import('./src/presentation/screens/main/SettingsScreen'));
+const NotificationsScreen = React.lazy(() => import('./src/presentation/screens/main/NotificationsScreen'));
+const EventDetailScreen = React.lazy(() => import('./src/presentation/screens/event/EventDetailScreen'));
+const CreateEventScreen = React.lazy(() => import('./src/presentation/screens/event/CreateEventScreen'));
+const WalletScreen = React.lazy(() => import('./src/presentation/screens/finance/WalletScreen'));
+const FriendsScreen = React.lazy(() => import('./src/presentation/screens/social/FriendsScreen'));
+const ChatScreen = React.lazy(() => import('./src/presentation/screens/social/ChatScreen'));
+const KYCIntroScreen = React.lazy(() => import('./src/presentation/screens/kyc/KYCIntroScreen'));
+const KYCSelfieScreen = React.lazy(() => import('./src/presentation/screens/kyc/KYCSelfieScreen'));
+const KYCSuccessScreen = React.lazy(() => import('./src/presentation/screens/kyc/KYCSuccessScreen'));
+const MainNavigator = React.lazy(() => import('./src/presentation/navigation/MainNavigator'));
 
 // Ignore specific warnings in development
 LogBox.ignoreLogs(['Reanimated 2']);
